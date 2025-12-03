@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Bar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="skill">
+      <div class="outer">
+        <div class="inner">
+          <div id="number"></div>
+        </div>
+        <h3>HTML</h3>
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        width="160px"
+        height="160px"
+      >
+        <defs>
+          <linearGradient id="GradientColor">
+            <stop offset="0%" stop-color="#e91e63" />
+            <stop offset="100%" stop-color="#673ab7" />
+          </linearGradient>
+        </defs>
+        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+      </svg>
+    </div>
+
+    <div class="skill">
+      <div class="outer">
+        <div class="inner">
+          <div id="numberCss"></div>
+        </div>
+        <h3>CSS</h3>
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        width="160px"
+        height="160px"
+      >
+        <defs>
+          <linearGradient id="GradientColor">
+            <stop offset="0%" stop-color="#e91e63" />
+            <stop offset="100%" stop-color="#673ab7" />
+          </linearGradient>
+        </defs>
+        <circle
+          cx="80"
+          cy="80"
+          r="70"
+          stroke-linecap="round"
+          class="cssCircle"
+        />
+      </svg>
+    </div>
+    <div class="skill">
+      <div class="outer">
+        <div class="inner">
+          <div id="numberJava"></div>
+        </div>
+        <h3>Javascript</h3>
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        width="160px"
+        height="160px"
+      >
+        <defs>
+          <linearGradient id="GradientColor">
+            <stop offset="0%" stop-color="#e91e63" />
+            <stop offset="100%" stop-color="#673ab7" />
+          </linearGradient>
+        </defs>
+        <circle
+          cx="80"
+          cy="80"
+          r="70"
+          stroke-linecap="round"
+          class="javaCircle"
+        />
+      </svg>
+    </div>
+
+    <script>
+      let number = document.getElementById("number");
+      let numberCss = document.getElementById("numberCss");
+      let numberJava = document.getElementById("numberJava");
+      let counter = 0;
+      let counterCss = 0;
+      let counterJava = 0;
+
+      setInterval(() => {
+        if (counter == 70) {
+          clearInterval();
+        } else {
+          counter += 1;
+          number.innerHTML = counter + "%";
+        }
+      }, 30);
+      setInterval(() => {
+        if (counterCss == 65) {
+          clearInterval();
+        } else {
+          counterCss += 1;
+          numberCss.innerHTML = counterCss + "%";
+        }
+      }, 25);
+      setInterval(() => {
+        if (counterJava == 85) {
+          clearInterval();
+        } else {
+          counterJava += 1;
+          numberJava.innerHTML = counterJava + "%";
+        }
+      }, 20);
+    </script>
+  </body>
+</html>
