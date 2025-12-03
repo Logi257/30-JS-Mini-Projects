@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script src="https://kit.fontawesome.com/86076e5e87.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png">
+</head>
+
+<body>
+    <div class="container">
+        <form action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateForm(event)">
+            <i class="fa-regular fa-paper-plane icon"></i>
+
+            <input type="hidden" name="access_key" value="3a08e93b-25d5-4b5c-ac2a-579026ac9552">
+
+            <div class="input-group">
+                <label for="fname">Full Name</label>
+                <input type="text" id="fname" name="Name" placeholder="Enter your name" onkeyup="validateName()" required>
+                <span id="name-error"></span>
+            </div>
+
+            <div class="input-group">
+                <label for="contact-number">Phone No</label>
+                <input type="tel" id="contact-number" name="Phone no" placeholder="1234567890" onkeyup="validatePhone()" required>
+                <span id="phone-error"></span>
+            </div>
+
+            <div class="input-group">
+                <label for="contact-email">Email id</label>
+                <input type="email" id="contact-email" name="Email Id" placeholder="Enter Email" onkeyup="validateEmail()" required>
+                <span id="email-error"></span>
+            </div>
+
+            <div class="input-group">
+                <label>Message</label>
+                <textarea rows="5" name="Message" id="contact-msg" placeholder="Enter your message" onkeyup="validateMessage()" required></textarea>
+                <span id="msg-error"></span>
+            </div>
+
+            <button type="submit">Submit</button>
+            <span id="submit-error"></span>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

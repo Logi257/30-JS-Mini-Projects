@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizontal Image Scroller</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Image Slider</h1>
+
+      <div class="gallery-wrapper">
+        <img src="images/back.png" id="backBtn" />
+        <div class="gallery">
+          <span><img src="images/image-1.png" /></span>
+          <span><img src="images/image-2.png" /></span>
+          <span><img src="images/image-3.png" /></span>
+          <span><img src="images/image-4.png" /></span>
+          <span><img src="images/image-5.png" /></span>
+          <span><img src="images/image-6.png" /></span>
+        </div>
+
+        <img src="images/next.png" id="nextBtn" />
+      </div>
+    </div>
+
+    <script>
+      let scrollContainer = document.querySelector(".gallery");
+      let backBtn = document.getElementById("backBtn");
+      let nextBtn = document.getElementById("nextBtn");
+
+      scrollContainer.addEventListener("wheel", (e) => {
+        e.preventDefault();
+        scrollContainer.scrollLeft += e.deltaY;
+        scrollContainer.style.scrollBehavior = "auto";
+      });
+
+      function scrollByScreen() {
+        let screenWidth = window.innerWidth;
+        return screenWidth < 768 ? screenWidth : screenWidth / 3;
+      }
+
+      backBtn.addEventListener("click", () => {
+        scrollContainer.scrollLeft -= scrollByScreen();
+        scrollContainer.style.scrollBehavior = "smooth";
+      });
+      nextBtn.addEventListener("click", () => {
+        scrollContainer.scrollLeft += scrollByScreen();
+        scrollContainer.style.scrollBehavior = "smooth";
+      });
+    </script>
+  </body>
+</html>
